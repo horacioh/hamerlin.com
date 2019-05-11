@@ -47,7 +47,8 @@ export default () => (
     <Header
       alignItems="center"
       flexDirection="column"
-      p={4}
+      py={4}
+      px={2}
       color="white"
       justifyContent="center"
     >
@@ -57,11 +58,11 @@ export default () => (
 
       <Text as="p">pronto online!</Text>
       <Text as="p">
-        <ExternalLink href="tel:005072215220" mr={2}>
+        <ExternalLink href="tel:+5072215220" mr={1}>
           221-5220
         </ExternalLink>
         |
-        <ExternalLink href="tel:005072211307" ml={2}>
+        <ExternalLink href="tel:+5072211307" ml={1}>
           221-1307
         </ExternalLink>
       </Text>
