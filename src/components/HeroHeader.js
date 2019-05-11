@@ -14,13 +14,13 @@ const Header = styled(Flex)`
   height: 100vh;
 `
 
+const CustomText = (props) => <Text as="p" textAlign="center" width={1} {...props} />
+
 const ExternalLink = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.lightgray};
-  ${space};
-    position: relative;
-    z-index: 1;
-
+  position: relative;
+  z-index: 1;
 
   ::before {
     content: "";
@@ -30,7 +30,7 @@ const ExternalLink = styled.a`
     bottom: 0;
     left: -0.25em;
     right: -0.25em;
-    background-color: hsla(198, 82%, 55%, 1.00);
+    background-color: hsla(198, 82%, 55%, 1);
     transform-origin: center right;
     transform: scaleX(0);
     transition: transform 0.2s ease-in-out;
@@ -40,6 +40,7 @@ const ExternalLink = styled.a`
     transform: scaleX(1);
     transform-origin: center left;
   }
+  ${space};
 `
 
 export default () => (
@@ -55,22 +56,21 @@ export default () => (
       <Box mb={4}>
         <Logo />
       </Box>
-
-      <Text as="p">pronto online!</Text>
-      <Text as="p">
-        <ExternalLink href="tel:+5072215220" mr={1}>
+      <CustomText>pronto online!</CustomText>
+      <CustomText>
+        <ExternalLink href="tel:+5072215220" mr={2}>
           221-5220
         </ExternalLink>
         |
-        <ExternalLink href="tel:+5072211307" ml={1}>
+        <ExternalLink href="tel:+5072211307" ml={2}>
           221-1307
         </ExternalLink>
-      </Text>
-      <Text as="p">
+      </CustomText>
+      <CustomText>
         <ExternalLink href="mailto:ventas@hamerlin.com">
           ventas@hamerlin.com
         </ExternalLink>
-      </Text>
+      </CustomText>
     </Header>
   </BgImage>
 )
