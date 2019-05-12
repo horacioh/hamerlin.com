@@ -62,13 +62,17 @@ export default () => (
           221-5220
         </ExternalLink>
         |
-        <ExternalLink href="tel:+5072211307" ml={2}>
-          221-1307
+        <ExternalLink href="tel:+5079960671" ml={2}>
+          996-0671
         </ExternalLink>
       </CustomText>
       <CustomText>
-        <ExternalLink href="mailto:ventas@hamerlin.com">
-          ventas@hamerlin.com
+        <ExternalLink href="https://wa.me/50760308417" mr={2}>
+          Whatsapp
+        </ExternalLink>
+        |
+        <ExternalLink href="mailto:ventas@hamerlin.com" ml={2}>
+          Email
         </ExternalLink>
       </CustomText>
     </Header>

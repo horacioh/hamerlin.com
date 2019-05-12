@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Fumigadora Hamerlin, S.A.`,
-    description: `Empresa lider en control de plagas en Panama`,
+    description: `Vive Libre de plagas con nuestro manejo integral. en Fumigadora Hamerlin llevamos mas de 30 años ayudando a nuestros clientes a estar libre de cualquier tipo de plagas: cucarachas, hormigas, ratones, gorgojos, comejen, murcielagos, animales exoticos...`,
     author: `@hamerlin`,
   },
   plugins: [
@@ -21,10 +21,10 @@ module.exports = {
         name: `hamerlin.com`,
         short_name: `hamerlin`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#1A254E`,
+        theme_color: `#1A254E`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/hamerlin-icon.jpg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
