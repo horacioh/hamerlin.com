@@ -65,6 +65,7 @@ export const BgImage = ({ children, ...props }) => (
       }
     `}
     render={data => {
+      console.log('rendrrr')
       const imageData = data.desktop.childImageSharp.fluid
       return (
         <BackgroundImage
