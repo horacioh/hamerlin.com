@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "hamerlinapp-dev-20190609220304-authRole",
+            "UnauthRoleArn": "arn:aws:iam::115238827609:role/hamerlinapp-dev-20190609220304-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::115238827609:role/hamerlinapp-dev-20190609220304-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "hamerlinapp-dev-20190609220304-deployment",
+            "UnauthRoleName": "hamerlinapp-dev-20190609220304-unauthRole",
+            "StackName": "hamerlinapp-dev-20190609220304",
+            "StackId": "arn:aws:cloudformation:eu-west-1:115238827609:stack/hamerlinapp-dev-20190609220304/97ec2da0-8af1-11e9-9412-0a4c7381ba1c"
+        },
+        "categories": {
+            "auth": {
+                "hamerlinapp20a461f9": {}
+            }
+        }
+    }
+}

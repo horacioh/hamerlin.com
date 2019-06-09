@@ -1,0 +1,10 @@
+{
+    "AppSyncApiName": "hamerlinapi",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authhamerlinapp20a461f9",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
