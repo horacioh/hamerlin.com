@@ -28,22 +28,19 @@ export function ScreenTitleProvider({
   );
 
   return (
-    <TitleContext.Provider value={value}>
-      {children}
-    </TitleContext.Provider>
+    <TitleContext.Provider value={value}>{children}</TitleContext.Provider>
   );
 }
 
-export function ScreenTitle({ title }: { title: string }) {
-  const { title: contextTitle, setTitle } = React.useContext(TitleContext);
-
+export function useTitle(title: string) {
+  console.log("TCL: useTitle -> title", title)
+  const { setTitle } = useScreenTitle();
   React.useEffect(() => {
     setTitle(title);
-  }, [contextTitle]);
-  return null;
+  });
 }
 
 export function useScreenTitle() {
-  const { title } = React.useContext(TitleContext);
-  return title;
+  console.log("TCL: useScreenTitle")
+  return React.useContext(TitleContext);
 }

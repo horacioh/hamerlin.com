@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Flex, Heading } from "@modulz/radix";
 import { Switch, Route, RouteComponentProps } from "react-router-dom";
-import { ScreenTitle } from "../components/ScreenTitle";
+import { useTitle } from "./ScreenTitle";
 
 interface ValueCardProps {
   title: string;
@@ -31,9 +31,9 @@ function ValueCard({ title, value }: ValueCardProps) {
 }
 
 function ClientsRoot() {
+  useTitle("Clients");
   return (
     <Container maxWidth={1280}>
-      <ScreenTitle title="Clients" />
       <Flex
         flexDirection={["column", "row"]}
         justifyContent="space-between"

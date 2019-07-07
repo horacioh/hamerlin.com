@@ -1,11 +1,11 @@
 import React from "react";
 import { Auth } from "aws-amplify";
 import { Flex, Box, Text, Button, Heading } from "@modulz/radix";
-import { useScreenTitle } from '../../components/ScreenTitle'
+import { useScreenTitle } from './ScreenTitle'
 
 export function Header() {
   const [user, setUser] = React.useState();
-  const title = useScreenTitle();
+  const { title } = useScreenTitle();
   React.useEffect(() => {
     Auth.currentAuthenticatedUser({
       bypassCache: false // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data

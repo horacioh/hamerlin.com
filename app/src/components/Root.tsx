@@ -5,8 +5,8 @@ import ApolloClient from "apollo-boost";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ApolloProvider } from "react-apollo";
 import { RadixProvider } from "@modulz/radix";
-import { ScreenTitleProvider } from "../components/ScreenTitle";
-import App from "../components/App";
+import { ScreenTitleProvider } from "./ScreenTitle";
+import App from "./App";
 
 Amplify.configure(AWSConfig);
 

@@ -4,14 +4,14 @@ import { jsx } from "@emotion/core";
 import { withAuthenticator } from "aws-amplify-react";
 import { Route, Switch } from "react-router-dom";
 import { Global } from "@emotion/core";
-import GlobalStyles from "../App/GlobalStyles";
-import { signUpConfig } from "../App/config";
-import { Header } from "../App/Components/Header";
+import GlobalStyles from "./GlobalStyles";
+import { signUpConfig } from "./config";
+import { Header } from "./Header";
 import { Flex, Box } from "@modulz/radix";
 import Sidebar from './Sidebar';
 
-const Home = React.lazy(() => import("../Home"));
-const Clients = React.lazy(() => import("../Clients"));
+const HomePage = React.lazy(() => import("./HomePage"));
+const ClientsPage = React.lazy(() => import("./ClientsPage"));
 
 export const App = () => (
   <Flex
@@ -26,13 +26,12 @@ export const App = () => (
   >
     <Global styles={GlobalStyles} />
     <Sidebar />
-    {/* main */}
     <Box flex="1" as="main">
       <Header />
       <React.Suspense fallback={<p>loading...</p>}>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/clients" component={Clients} />
+          <Route path="/" exact component={HomePage} />
+          <Route path="/clients" component={ClientsPage} />
         </Switch>
       </React.Suspense>
     </Box>
