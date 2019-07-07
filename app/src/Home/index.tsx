@@ -1,13 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Heading, Container, Flex } from "@modulz/radix";
 
 const Home = () => (
-  <div>
-    <h1>Hamerlin Dashboard. WIP</h1>
-    <ul>
-      <li><Link to="/clients">Clientes</Link></li>
-    </ul>
-  </div>
-)
+  <Container size={2} p={4} bg="tomato">
+    <Flex justifyContent="space-between">
+      <Heading>Home Dashboard</Heading>
+    </Flex>
+  </Container>
+);
 
 export default Home;

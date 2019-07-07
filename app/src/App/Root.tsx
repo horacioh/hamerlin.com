@@ -4,7 +4,8 @@ import AWSConfig from "../aws-exports";
 import ApolloClient from "apollo-boost";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ApolloProvider } from "react-apollo";
-import App from "./App";
+import { RadixProvider } from "@modulz/radix";
+import App from "../components/App";
 
 Amplify.configure(AWSConfig);
 
@@ -16,7 +17,9 @@ export function Root() {
   return (
     <Router>
       <ApolloProvider client={client}>
-        <App />
+        <RadixProvider>
+          <App />
+        </RadixProvider>
       </ApolloProvider>
     </Router>
   );

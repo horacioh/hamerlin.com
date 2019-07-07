@@ -109,9 +109,6 @@ export default css`
   section {
     display: block;
   }
-  body {
-    line-height: 1;
-  }
   ol,
   ul {
     list-style: none;
@@ -130,5 +127,8 @@ export default css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  body {
+    line-height: 1;
   }
 `;
