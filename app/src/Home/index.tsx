@@ -1,10 +1,11 @@
 import React from "react";
-import { Heading, Container, Flex } from "@modulz/radix";
+import { Container, Flex } from "@modulz/radix";
+import { ScreenTitle } from '../components/ScreenTitle'
 
 const Home = () => (
   <Container size={2} p={4} bg="tomato">
     <Flex justifyContent="space-between">
-      <Heading>Home Dashboard</Heading>
+      <ScreenTitle title="Home" />
     </Flex>
   </Container>
 );

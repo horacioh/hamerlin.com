@@ -5,6 +5,7 @@ import ApolloClient from "apollo-boost";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ApolloProvider } from "react-apollo";
 import { RadixProvider } from "@modulz/radix";
+import { ScreenTitleProvider } from "../components/ScreenTitle";
 import App from "../components/App";
 
 Amplify.configure(AWSConfig);
@@ -18,7 +19,9 @@ export function Root() {
     <Router>
       <ApolloProvider client={client}>
         <RadixProvider>
-          <App />
+          <ScreenTitleProvider initialTitle="Hamerlin App">
+            <App />
+          </ScreenTitleProvider>
         </RadixProvider>
       </ApolloProvider>
     </Router>

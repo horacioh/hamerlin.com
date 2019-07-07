@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Text } from "@modulz/radix";
+import { Box } from "@modulz/radix";
 
 function Sidebar() {
   return (
@@ -15,7 +15,7 @@ function Sidebar() {
         borderBottom={[0, "1px solid"]}
         borderColor={["grays.2", "grays.2"]}
       >
-        <Text>Hamerlin</Text>
+        <Link to="/">Hamerlin</Link>
       </Box>
       <Box p={3} px={4}>
         <Link to="/clients">Clientes</Link>
