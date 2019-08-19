@@ -7,11 +7,10 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "site",
-    "app"
+    "site"
   ],
   "scripts": {
-    "site": "yarn workspace site start",
+    "site": "yarn workspace site develop",
     "app": "yarn workspace app start",
     "site:build": "yarn workspace site build",
     "app:build": "yarn workspace app build"
