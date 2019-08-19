@@ -67,6 +67,8 @@ export default {
       fontWeight: "body",
       lineHeight: "body",
       color: "text",
+      m: 0,
+      p: 0
     },
     h1: {
       variant: "text.heading",

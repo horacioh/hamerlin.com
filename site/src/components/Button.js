@@ -19,6 +19,8 @@ export default function Button({
         variant: `buttons.${variant}`,
         border: "2px solid",
         borderColor: "primary",
+        fontFamily: 'heading',
+        fontWeight: 'heading',
         py: 2,
         px: 3,
         borderRadius: 1,
