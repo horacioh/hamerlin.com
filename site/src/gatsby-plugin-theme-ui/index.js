@@ -1,5 +1,5 @@
 export default {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
     body: "system-ui, sans-serif",
     heading: '"Montserrat", sans-serif',
@@ -8,6 +8,7 @@ export default {
     text: "#9e9e9e",
     background: "#fafafa",
     primary: "#1A2451",
+    primaryBg: '#EEEEF8'
   },
   fontWeights: {
     body: 400,
@@ -53,6 +54,12 @@ export default {
       textTransform: "uppercase",
       fontFamily: "heading",
     },
+    solid: {
+      color: "white",
+      textTransform: "uppercase",
+      fontFamily: "heading",
+      bg: 'primary'
+    }
   },
   breakpoints: ["40em", "56em", "64em"],
   styles: {

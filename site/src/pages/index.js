@@ -1,7 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Hero from "../components/Hero"
-import ImageAndText from "../components/ImageAndText"
+import ImageLeftAndText from "../components/ImageLeftAndText"
+import AboutSection from "../components/AboutSection";
+// import ServiceCardsSection from "../components/ServicesCards";
+import ContactSection from '../components/ContactSection';
 
 export const PageQuery = graphql`
   {
@@ -11,7 +14,10 @@ export const PageQuery = graphql`
           sections {
             __typename
             ...HeroSection
-            ...ImageAndTextSection
+            ...ImageLeftAndTextSection
+            ...AboutSection
+            ...OnContactSection
+            # ...ServiceCardsSection
           }
         }
       }
@@ -31,8 +37,17 @@ export default function Home({ data }) {
             // TODO: AGREGAR key
             return <Hero {...section} />
 
-          case "Wordpress_Page_Pagesections_Sections_ImageAndText":
-            return <ImageAndText {...section} />
+          case "Wordpress_Page_Pagesections_Sections_ImageLeftAndText":
+            return <ImageLeftAndText {...section} />
+
+          // case "Wordpress_Page_Pagesections_Sections_Services":
+          //       return <ServiceCardsSection {...section} />
+
+          case "Wordpress_Page_Pagesections_Sections_AboutSection":
+            return <AboutSection {...section} />
+
+          case "Wordpress_Page_Pagesections_Sections_ContactSection":
+            return <ContactSection {...section} />
 
           default:
             return <p>No hay secciones que pintar :(</p>

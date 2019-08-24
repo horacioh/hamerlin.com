@@ -2,12 +2,10 @@
 import { jsx, Styled, Flex } from "theme-ui"
 import { graphql } from "gatsby"
 import Container from "./Container"
-import MainMenu from "./MainMenu"
 
 export const fragment = graphql`
-  fragment ImageAndTextSection on Wordpress_Page_Pagesections_Sections_ImageAndText {
+  fragment ImageLeftAndTextSection on Wordpress_Page_Pagesections_Sections_ImageLeftAndText {
     title
-    imagePosition
     text
     image {
       sourceUrl
@@ -15,21 +13,17 @@ export const fragment = graphql`
   }
 `
 
-export default function Hero({ title, text, image, imagePosition }) {
-  console.log("TCL: Hero -> image", image)
-
-  const dir = imagePosition == "left" ? "row" : "row-reverse"
+export default function ImageLeftAndText({ title, text, image }) {
   return (
-    <Flex sx={{ py: 3 }}>
+    <Flex sx={{ mb: 6 }}>
       <Container>
         <Flex sx={{ flexDirection: ["column", "row"] }}>
           <Flex sx={{ flex: 1 }}>
             <div
               sx={{
-                bg: "#cdcdcd",
                 width: ["100%", "90%"],
-                mx: ["auto", 0],
-                paddingBottom: "90%",
+                pb: "90%",
+
                 position: "relative",
               }}
             >
@@ -76,6 +70,7 @@ export default function Hero({ title, text, image, imagePosition }) {
               width: ["100%", "50%"],
               flexDirection: "column",
               justifyContent: "center",
+              my: 4
             }}
           >
             <Styled.h2>{title}</Styled.h2>
