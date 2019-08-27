@@ -1,0 +1,14 @@
+{
+    "staging": {
+        "awscloudformation": {
+            "AuthRoleName": "hamerlincom-staging-20190825165732-authRole",
+            "UnauthRoleArn": "arn:aws:iam::115238827609:role/hamerlincom-staging-20190825165732-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::115238827609:role/hamerlincom-staging-20190825165732-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "hamerlincom-staging-20190825165732-deployment",
+            "UnauthRoleName": "hamerlincom-staging-20190825165732-unauthRole",
+            "StackName": "hamerlincom-staging-20190825165732",
+            "StackId": "arn:aws:cloudformation:eu-west-1:115238827609:stack/hamerlincom-staging-20190825165732/ab0d2950-c748-11e9-8782-0ae78d106d3e"
+        }
+    }
+}

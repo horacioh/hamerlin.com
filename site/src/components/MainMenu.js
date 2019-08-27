@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Flex } from "theme-ui"
 import Container from "./Container"
-import { Button, ButtonLink } from "./Button"
+import { ButtonLink } from "./Button"
 import Logo from "./logo"
 import * as Icons from "./Icons"
 

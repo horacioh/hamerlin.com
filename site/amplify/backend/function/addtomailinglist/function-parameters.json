@@ -1,0 +1,10 @@
+{
+    "permissions": {
+        "api": {
+            "hamerlinapi": [
+                "read",
+                "update"
+            ]
+        }
+    }
+}

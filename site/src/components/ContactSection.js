@@ -31,7 +31,8 @@ export default function ContactSection({ title, text }) {
               width: ["100%", "50%"],
               flexDirection: "column",
               justifyContent: "center",
-              flexBasis: '100%'
+              flexBasis: '100%',
+              mb: 4
             }}
           >
             <Styled.h2 sx={{ mt: 0 }}>{title}</Styled.h2>

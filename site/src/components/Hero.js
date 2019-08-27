@@ -43,7 +43,7 @@ export default function Hero({ title, text, image }) {
           sx={{
             position: "absolute",
             top: 0,
-            right: "-40%",
+            left: "50%",
             height: "100%",
             width: "100%",
             maxWidth: 1450,
