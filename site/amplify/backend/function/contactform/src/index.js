@@ -17,8 +17,7 @@ exports.handler = function (event, context) { //eslint-disable-line
     method: 'post',
     url: "https://us3.api.mailchimp.com/3.0/lists/433b887bb4/members",
     headers: {
-      // Authorization: `Basic ${process.env.MAILCHIMP_API_KEY}`,
-      Authorization: `apikey 64df77c6a595b10ca4e4a1e7e53be395-us3`,
+      Authorization: `apikey ${process.env.MAILCHIMP_API_KEY}`,
       'Content-Type': 'application/json',
     },
     data: {
