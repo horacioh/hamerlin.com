@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { jsx, Styled } from "theme-ui"
 import { Formik, Form, Field } from "formik"
 import { Button } from "./Button"
+import { createLead, contactForm } from '../graphql/mutations'
 import { API, graphqlOperation } from "aws-amplify"
-import { createLead } from "../graphql/mutations"
 
 function Label({ name }) {
   function getlabel(name) {
@@ -192,13 +192,11 @@ function TextAreaField({
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
-  function handleSubmit(values, { setSubmitting }) {
+  async function handleSubmit(values, { setSubmitting }) {
     setSubmitted(true);
-    API.graphql(graphqlOperation(createLead, { input: values })).then(
-      result => {
-        setSubmitting(false)
-      }
-    )
+    await API.graphql(graphqlOperation(createLead, { input: values }));
+    await API.graphql(graphqlOperation(contactForm, { input: values }));
+    setSubmitting(false)
   }
   return (
     <div
@@ -239,7 +237,7 @@ export default function ContactForm() {
             <Field component={SelectField} name="serviceType" />
             <Field name="comment" component={TextAreaField} />
             {submitted ? (
-              <p>Gracias por contactarnos!</p>
+              <Styled.p sx={{color: 'primary', py: 1, px: 2, borderRadius: 3, fontSize: [2, 2]}}>Gracias por contactarnos!</Styled.p>
             ) : (
               <Button variant="solid" type="submit" disabled={isSubmitting}>
                 Submit

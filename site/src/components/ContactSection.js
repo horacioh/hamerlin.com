@@ -20,7 +20,7 @@ export default function ContactSection({ title, text }) {
     >
       <Container>
         <Flex sx={{ flexDirection: ["column-reverse", "row"], alignItems: 'flex-start' }}>
-          <Flex sx={{flexBasis: '100%'}}>
+          <Flex sx={{flexBasis: '100%', width: ["100%", "50%"]}}>
             <div sx={{width: ["100%", "90%"]}}>
               <ContactForm />
             </div>

@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "api": {
+            "hamerlinapi": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

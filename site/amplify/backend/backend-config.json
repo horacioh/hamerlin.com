@@ -9,7 +9,7 @@
 		}
 	},
 	"function": {
-		"addtomailinglist": {
+		"contactform": {
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true,

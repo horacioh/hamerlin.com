@@ -7,20 +7,21 @@ type Lead @model {
   comment: String
 }
 
-type Mutation {
-  addLeadToMailingList(input: createLeadInput): String @function(name: "addtomailinglist-${env}")
-}
-
 enum Service {
   RESIDENCIAL
   COMERCIAL
   INDUSTRIAL
 }
 
-input createLeadInput {
-  fullname: String!
-  email: AWSEmail!
-  phone: String!
-  serviceType: Service
-  comment: String
+type Mutation {
+  contactForm(input: CreateLeadInput!): String @function(name: "contactform-${env}")
+}
+
+input CreateLeadInput {
+	id: ID
+	fullname: String!
+	email: AWSEmail!
+	phone: String!
+	serviceType: Service
+	comment: String
 }

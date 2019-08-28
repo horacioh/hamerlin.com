@@ -1,6 +1,10 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const contactForm = `mutation ContactForm($input: CreateLeadInput!) {
+  contactForm(input: $input)
+}
+`;
 export const createLead = `mutation CreateLead($input: CreateLeadInput!) {
   createLead(input: $input) {
     id
