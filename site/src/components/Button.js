@@ -19,7 +19,7 @@ export function ButtonLink({
         color: "inherit",
         variant: `buttons.${variant}`,
         border: "2px solid",
-        borderColor: "primary",
+        borderColor: "currentColor",
         fontFamily: 'heading',
         fontWeight: 'heading',
         py: 2,

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled, Flex } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import Container from "./Container"
 import MainMenu from "./MainMenu"
 
@@ -8,24 +9,22 @@ export const fragment = graphql`
   fragment HeroSection on Wordpress_Page_Pagesections_Sections_Hero {
     title
     text
-    image {
-      sourceUrl
-    }
   }
 `
 
 export default function Hero({ title, text, image }) {
-  // const heroImage = useStaticQuery(graphql`
-  //   {
-  //     file(name: { eq: "hero-image" }) {
-  //       childImageSharp {
-  //         fluid {
-  //           ...GatsbyImageSharpFluid
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const heroImage = useStaticQuery(graphql`
+    query HeroImage {
+      file(relativePath: { eq: "hero-image.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Flex
       sx={{
@@ -34,10 +33,12 @@ export default function Hero({ title, text, image }) {
         maxHeight: 1400,
         flexDirection: "column",
         position: "relative",
-        // TODO: bug scroll horizontal
+        overflow: 'hidden'
       }}
     >
-      <Container sx={{ position: "relative", width: "100%", zIndex: 0 }}>
+      <div
+        sx={{ position: "absolute", width: "100%", zIndex: 0, height: "100%" }}
+      >
         {/* primaryBg shape */}
         <div
           sx={{
@@ -59,7 +60,24 @@ export default function Hero({ title, text, image }) {
             />
           </svg>
         </div>
-      </Container>
+        {/* imagen */}
+        <div
+          sx={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: "40%",
+            height: "90%",
+            maxHeight: 700,
+            width: "80%",
+            right: 0,
+            maxWidth: 1450,
+            maxHeight: '100%',
+          }}
+        >
+          <Img fluid={heroImage.file.childImageSharp.fluid} imgStyle={{objectFit: 'contain', maxHeight: 900}} />
+        </div>
+      </div>
       <MainMenu />
       <Container
         sx={{
@@ -72,7 +90,7 @@ export default function Hero({ title, text, image }) {
       >
         <div
           sx={{
-            width: ["100%", "50%"],
+            width: ["100%", "40%"],
             zIndex: 10,
           }}
         >

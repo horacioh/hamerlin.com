@@ -1,6 +1,8 @@
 import React from "react"
 
-export default function Logo({ width = 204, height = 47, ...rest }) {
+export default function Logo({ small = false, ...rest }) {
+  const width = small ? 102 : 204;
+  const height = small ? 24 : 48;
   return (
     <svg width={width} height={height} {...rest}>
       <defs>

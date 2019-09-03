@@ -2,7 +2,7 @@
 import { jsx, Styled, Flex } from "theme-ui"
 import { graphql } from "gatsby"
 import Container from "./Container"
-import ContactForm from './ContactForm';
+import ContactForm from "./ContactForm"
 
 export const fragment = graphql`
   fragment OnContactSection on Wordpress_Page_Pagesections_Sections_ContactSection {
@@ -14,14 +14,20 @@ export const fragment = graphql`
 export default function ContactSection({ title, text }) {
   return (
     <Flex
+      id="contacto"
       sx={{
-        mb: 7,
+        mb: 4,
       }}
     >
       <Container>
-        <Flex sx={{ flexDirection: ["column-reverse", "row"], alignItems: 'flex-start' }}>
-          <Flex sx={{flexBasis: '100%', width: ["100%", "50%"]}}>
-            <div sx={{width: ["100%", "90%"]}}>
+        <Flex
+          sx={{
+            flexDirection: ["column-reverse", "row"],
+            alignItems: "flex-start",
+          }}
+        >
+          <Flex sx={{ flexBasis: "100%", width: ["100%", "50%"] }}>
+            <div sx={{ width: ["100%", "90%"], zIndex: 1 }}>
               <ContactForm />
             </div>
           </Flex>
@@ -31,8 +37,8 @@ export default function ContactSection({ title, text }) {
               width: ["100%", "50%"],
               flexDirection: "column",
               justifyContent: "center",
-              flexBasis: '100%',
-              mb: 4
+              flexBasis: "100%",
+              mb: 4,
             }}
           >
             <Styled.h2 sx={{ mt: 0 }}>{title}</Styled.h2>

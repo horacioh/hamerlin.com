@@ -3,6 +3,15 @@ require('dotenv').config({
 })
 
 module.exports = {
+  siteMetadata: {
+    title: `Fumigadora Hamerlin, S.A.`,
+    siteUrl: `https://www.hamerlin.com`,
+    social: {
+      facebook: "fumigadorahamerlinpty",
+      instagram: "hamerlin_pty",
+      whatsapp: "50760308417"
+    }
+  },
   plugins: [
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-sharp",

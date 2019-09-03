@@ -5,6 +5,7 @@ export const contactForm = `mutation ContactForm($input: CreateLeadInput!) {
   contactForm(input: $input)
 }
 `;
+
 export const createLead = `mutation CreateLead($input: CreateLeadInput!) {
   createLead(input: $input) {
     id

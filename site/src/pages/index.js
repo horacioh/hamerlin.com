@@ -1,9 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/Layout";
 import Hero from "../components/Hero"
 import ImageLeftAndText from "../components/ImageLeftAndText"
 import AboutSection from "../components/AboutSection";
-// import ServiceCardsSection from "../components/ServicesCards";
+import ServiceCardsSection from "../components/ServicesCards";
 import ContactSection from '../components/ContactSection';
 
 export const PageQuery = graphql`
@@ -17,7 +18,7 @@ export const PageQuery = graphql`
             ...ImageLeftAndTextSection
             ...AboutSection
             ...OnContactSection
-            # ...ServiceCardsSection
+            ...ServiceCardsSection
           }
         }
       }
@@ -28,7 +29,7 @@ export const PageQuery = graphql`
 export default function Home({ data }) {
   const sections = data.wordpress.pageBy.pageSections.sections
   return (
-    <div>
+    <Layout>
       {sections.map(section => {
         const typeName = section.__typename
 
@@ -40,8 +41,8 @@ export default function Home({ data }) {
           case "Wordpress_Page_Pagesections_Sections_ImageLeftAndText":
             return <ImageLeftAndText {...section} />
 
-          // case "Wordpress_Page_Pagesections_Sections_Services":
-          //       return <ServiceCardsSection {...section} />
+          case "Wordpress_Page_Pagesections_Sections_Services":
+                return <ServiceCardsSection {...section} />
 
           case "Wordpress_Page_Pagesections_Sections_AboutSection":
             return <AboutSection {...section} />
@@ -50,9 +51,9 @@ export default function Home({ data }) {
             return <ContactSection {...section} />
 
           default:
-            return <p>No hay secciones que pintar :(</p>
+            return <p>Algo sali&oacute; mal :(</p>
         }
       })}
-    </div>
+    </Layout>
   )
 }
