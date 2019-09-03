@@ -89,7 +89,6 @@ export default function AboutSection({ title, text, image }) {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  zIndex: 2,
                   borderRadius: 16,
                   zIndex: 5,
                   boxShadow: "0 4px 80px 0 rgba(0,0,0,0.10)",

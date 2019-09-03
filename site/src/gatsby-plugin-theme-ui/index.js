@@ -20,7 +20,7 @@ export default {
     heading: 1.125,
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  radii: [0, 3],
+  radii: [0, 3, 8],
   text: {
     body: {
       fontFamily: "body",
@@ -84,6 +84,10 @@ export default {
     h2: {
       variant: "text.heading",
       fontSize: [4, 5],
+    },
+    h3: {
+      variant: "text.heading",
+      fontSize: [3, 4],
     },
     a: {
       fontFamily: "body",

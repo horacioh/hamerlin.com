@@ -4,6 +4,9 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import Container from "./Container"
 import MainMenu from "./MainMenu"
+import { ButtonLink } from "./Button"
+import IconButton from "./IconButton"
+import * as Icons from "./Icons"
 
 export const fragment = graphql`
   fragment HeroSection on Wordpress_Page_Pagesections_Sections_Hero {
@@ -13,8 +16,18 @@ export const fragment = graphql`
 `
 
 export default function Hero({ title, text, image }) {
-  const heroImage = useStaticQuery(graphql`
-    query HeroImage {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      site {
+        siteMetadata {
+          social {
+            facebook
+            instagram
+            whatsapp
+          }
+        }
+      }
+
       file(relativePath: { eq: "hero-image.png" }) {
         childImageSharp {
           fluid(maxWidth: 1200) {
@@ -25,14 +38,17 @@ export default function Hero({ title, text, image }) {
     }
   `)
 
+  const { facebook, instagram, whatsapp } = data.site.siteMetadata.social
+
   return (
     <Flex
       sx={{
         height: "100vh",
-        minHeight: 700,
+        minHeight: 900,
         maxHeight: 1400,
         flexDirection: "column",
         position: "relative",
+        width: '100vw',
         overflow: 'hidden'
       }}
     >
@@ -44,7 +60,7 @@ export default function Hero({ title, text, image }) {
           sx={{
             position: "absolute",
             top: 0,
-            left: "50%",
+            left: "40%",
             height: "100%",
             width: "100%",
             maxWidth: 1450,
@@ -66,19 +82,21 @@ export default function Hero({ title, text, image }) {
             position: "absolute",
             top: 0,
             bottom: 0,
-            left: "40%",
-            height: "90%",
-            maxHeight: 700,
+            left: ["30%", "40%"],
+            height: "100vh",
+            maxHeight: 900,
             width: "80%",
             right: 0,
             maxWidth: 1450,
-            maxHeight: '100%',
           }}
         >
-          <Img fluid={heroImage.file.childImageSharp.fluid} imgStyle={{objectFit: 'contain', maxHeight: 900}} />
+          <Img
+            fluid={data.file.childImageSharp.fluid}
+            imgStyle={{ objectFit: "contain", maxHeight: 900 }}
+          />
         </div>
       </div>
-      <MainMenu />
+      <MainMenu facebook={facebook} instagram={instagram} whatsapp={whatsapp} />
       <Container
         sx={{
           display: "flex",
@@ -90,12 +108,30 @@ export default function Hero({ title, text, image }) {
       >
         <div
           sx={{
+            pt: [150, 0],
             width: ["100%", "40%"],
             zIndex: 10,
           }}
         >
           <Styled.h1>{title}</Styled.h1>
-          <Styled.p>{text}</Styled.p>
+          <Styled.p sx={{mb: 4}}>{text}</Styled.p>
+          <ButtonLink sx={{mb: 3, display: ["inline-block", "none"]}} to="#contacto" variant="outline">
+              Contactanos
+            </ButtonLink>
+          <Flex sx={{alignItems: "center", display: ["flex", "none"] }}>
+            <IconButton
+              to={`https://wa.me/${whatsapp}`}
+              icon={<Icons.Whatsapp />}
+            />
+            <IconButton
+              to={`https://instagram.com/${instagram}`}
+              icon={<Icons.Instagram />}
+            />
+            <IconButton
+              to={`https://facebook.com/${facebook}`}
+              icon={<Icons.Facebook />}
+            />
+          </Flex>
         </div>
       </Container>
     </Flex>

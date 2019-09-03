@@ -127,7 +127,7 @@ function Select(props) {
         "::focus": {
           borderolor: "#aaa",
           boxShadow: "0 0 1px 3px rgba(59, 153, 252, .7)",
-          boxShadow: "0 0 0 3px -moz-mac-focusring",
+          // boxShadow: "0 0 0 3px -moz-mac-focusring",
           color: "#222",
           outline: "none",
         },
