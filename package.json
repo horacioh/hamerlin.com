@@ -12,7 +12,7 @@
   "scripts": {
     "site": "yarn workspace site develop",
     "app": "yarn workspace app start",
-    "site:build": "yarn workspace site build",
+    "build": "yarn workspace site build",
     "app:build": "yarn workspace app build"
   }
 }
