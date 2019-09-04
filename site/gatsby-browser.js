@@ -5,6 +5,8 @@ const { Global, css } = require("@emotion/core");
 
 
 exports.onClientEntry = () => {
+  console.log("===>>> ", process.env.AMPLIFY_API_KEY);
+  console.log("=====>>>>> Amplify Default ", Amplify.default)
   Amplify.default.configure({
     aws_project_region: "eu-west-1",
     aws_appsync_graphqlEndpoint: process.env.AMPLIFY_GRAPHQL_ENDPOINT,

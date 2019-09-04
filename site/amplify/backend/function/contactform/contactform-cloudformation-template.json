@@ -76,8 +76,8 @@
 				"Runtime": "nodejs10.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "hamerlincom-staging-20190825165732-deployment",
-					"S3Key": "amplify-builds/contactform-783836415176522f6546-build.zip"
+					"S3Bucket": "hamerlincom-prod-20190904104700-deployment",
+					"S3Key": "amplify-builds/contactform-77474f2b585268494263-build.zip"
 				}
 			}
 		},
