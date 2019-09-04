@@ -1,13 +1,11 @@
-const React = require("react")
-const Amplify = require('aws-amplify');
-const { Global, css } = require("@emotion/core");
+import React from 'react'
+import Amplify from 'aws-amplify'
+import { Global, css } from "@emotion/core"
 
 
 
-exports.onClientEntry = () => {
-  console.log("===>>> ", process.env.AMPLIFY_API_KEY);
-  console.log("=====>>>>> Amplify Default ", Amplify.default)
-  Amplify.default.configure({
+export function onClientEntry() {
+  Amplify.configure({
     aws_project_region: "eu-west-1",
     aws_appsync_graphqlEndpoint: process.env.AMPLIFY_GRAPHQL_ENDPOINT,
     aws_appsync_region: "eu-west-1",
@@ -17,7 +15,7 @@ exports.onClientEntry = () => {
 }
 
 
-exports.wrapRootElement = ({ element }) => {
+export function wrapRootElement({ element }) {
   return (
     <React.Fragment>
       <Global styles={css`
