@@ -5,6 +5,8 @@ import { Global, css } from "@emotion/core"
 
 
 export function onClientEntry() {
+  console.log("graphql endpoint =", process.env.AMPLIFY_GRAPHQL_ENDPOINT)
+  console.log("api key =", process.env.AMPLIFY_API_KEY)
   Amplify.configure({
     aws_project_region: "eu-west-1",
     aws_appsync_graphqlEndpoint: process.env.AMPLIFY_GRAPHQL_ENDPOINT,
