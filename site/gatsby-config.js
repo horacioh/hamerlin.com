@@ -27,7 +27,7 @@ module.exports = {
       options: {
         typeName: "Wordpress",
         fieldName: "wordpress",
-        url: "http://hamerlincom.local/graphql",
+        url: process.env.WORDPRESS_GRAPHQL_ENDPOINT,
       },
     },
   ],
