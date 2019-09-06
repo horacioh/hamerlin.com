@@ -18,8 +18,9 @@ export default function Link({ children, to, activeClassName, partiallyActive, .
       </GatsbyLink>
     )
   }
+
   return (
-    <a href={to} target="_blank" {...other}>
+    <a href={to} target={to === '#contacto' ? "" : "_blank"} {...other}>
       {children}
     </a>
   )

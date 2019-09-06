@@ -4,10 +4,10 @@ import Link from "./Link"
 
 export function ButtonLink({
   variant = "outline",
-  sx,
   onClick,
   to,
   disabled,
+  type = 'button',
   ...rest
 }) {
   return (
@@ -29,7 +29,6 @@ export function ButtonLink({
         // "&.active": {
         //   color: "secondary",
         // },
-        ...sx,
 
       }}
       {...rest}

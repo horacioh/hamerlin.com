@@ -1,15 +1,13 @@
-import { useState } from 'react'
+import { useState } from "react"
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { Formik, Form, Field } from "formik"
 import { Button } from "./Button"
-import { createLead, contactForm } from '../graphql/mutations'
-import { API, graphqlOperation } from "aws-amplify"
 
 function Label({ name }) {
   function getlabel(name) {
     switch (name) {
-      case "fullname":
+      case "name":
         return "Nombre completo"
       case "email":
         return "correo electrónico"
@@ -191,11 +189,20 @@ function TextAreaField({
 }
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(false)
   async function handleSubmit(values, { setSubmitting }) {
-    setSubmitted(true);
-    await API.graphql(graphqlOperation(createLead, { input: values }));
-    await API.graphql(graphqlOperation(contactForm, { input: values }));
+    setSubmitted(true)
+    // submit formik cloud form
+    fetch(
+      "https://api.formik.com/submit/hamerlincom/contact-form-landing-page",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      }
+    )
     setSubmitting(false)
   }
   return (
@@ -210,7 +217,7 @@ export default function ContactForm() {
     >
       <Formik
         initialValues={{
-          fullname: "",
+          name: "",
           email: "",
           phone: "",
           serviceType: null,
@@ -231,13 +238,23 @@ export default function ContactForm() {
       >
         {({ handleSubmit, isSubmitting }) => (
           <Form sx={{ width: "100%" }}>
-            <Field name="fullname" component={InputField} />
+            <Field name="name" component={InputField} />
             <Field name="email" type="email" component={InputField} />
             <Field name="phone" type="phone" component={InputField} />
             <Field component={SelectField} name="serviceType" />
             <Field name="comment" component={TextAreaField} />
             {submitted ? (
-              <Styled.p sx={{color: 'primary', py: 1, px: 2, borderRadius: 3, fontSize: [2, 2]}}>Gracias por contactarnos!</Styled.p>
+              <Styled.p
+                sx={{
+                  color: "primary",
+                  py: 1,
+                  px: 2,
+                  borderRadius: 3,
+                  fontSize: [2, 2],
+                }}
+              >
+                Gracias por contactarnos!
+              </Styled.p>
             ) : (
               <Button variant="solid" type="submit" disabled={isSubmitting}>
                 Submit

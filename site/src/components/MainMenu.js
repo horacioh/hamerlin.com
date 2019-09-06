@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Flex } from "theme-ui"
-import { graphql, useStaticQuery } from "gatsby"
 import Container from "./Container"
 import { ButtonLink } from "./Button"
 import Logo from "./logo"
@@ -9,7 +8,6 @@ import * as Icons from "./Icons"
 
 
 export default function MainMenu({ whatsapp, instagram, facebook, ...rest }) {
-
   return (
     <div
       sx={{ py: 4, position: "absolute", top: 0, zIndex: 10, width: "100%" }}

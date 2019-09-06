@@ -29,6 +29,6 @@ module.exports = {
         fieldName: "wordpress",
         url: process.env.WORDPRESS_GRAPHQL_ENDPOINT,
       },
-    },
+    }
   ],
 }
