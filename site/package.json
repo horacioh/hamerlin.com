@@ -22,6 +22,7 @@
     "formik": "^1.5.8",
     "gatsby": "^2.13.67",
     "gatsby-image": "^2.2.8",
+    "gatsby-plugin-fathom": "^1.2.0",
     "gatsby-plugin-sharp": "^2.2.12",
     "gatsby-plugin-theme-ui": "^0.2.34",
     "gatsby-source-filesystem": "^2.1.9",
@@ -33,6 +34,7 @@
     "typeface-montserrat": "^0.0.75"
   },
   "devDependencies": {
+    "jest": "^24.9.0",
     "prettier": "^1.18.2"
   },
   "repository": {

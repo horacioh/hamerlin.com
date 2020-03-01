@@ -1,4 +1,4 @@
-require('dotenv').config({
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
@@ -9,8 +9,8 @@ module.exports = {
     social: {
       facebook: "fumigadorahamerlinpty",
       instagram: "hamerlin_pty",
-      whatsapp: "50760308417"
-    }
+      whatsapp: "50760308417",
+    },
   },
   plugins: [
     "gatsby-plugin-theme-ui",
@@ -29,6 +29,13 @@ module.exports = {
         fieldName: "wordpress",
         url: process.env.WORDPRESS_GRAPHQL_ENDPOINT,
       },
-    }
+    },
+    {
+      resolve: "gatsby-plugin-fathom",
+      options: {
+        siteId: "JOTUWQXO",
+        whitelistHostnames: ["hamerlin.com"],
+      },
+    },
   ],
 }
