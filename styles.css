@@ -1,0 +1,136 @@
+:root {
+  --color-gray: #9e9f9e;
+  --color-lightgray: #f6f6ff;
+  --color-accent: hsla(198, 82%, 55%, 1);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #fff;
+  background-color: #040e18;
+}
+
+.hero-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 8px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo-wrap {
+  margin-bottom: 32px;
+}
+
+.logo {
+  width: 250px;
+  max-width: 80vw;
+  height: auto;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-box {
+  padding: 8px;
+  margin: 16px;
+  text-align: center;
+}
+
+.label {
+  margin: 0 0 8px;
+  padding: 0;
+  color: var(--color-gray);
+  font-size: 20px;
+  text-align: center;
+}
+
+.value {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  color: var(--color-gray);
+  text-align: center;
+}
+
+.emoji {
+  margin-left: 8px;
+}
+
+.link {
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  color: var(--color-lightgray);
+  word-break: keep-all;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -0.25em;
+  right: -0.25em;
+  background-color: var(--color-accent);
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.link:hover::before {
+  transform: scaleX(1);
+  transform-origin: center left;
+}
+
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  color: var(--color-lightgray);
+}
+
+/* tablet / desktop: lay contact boxes out in a row (theme breakpoint 52em) */
+@media (min-width: 52em) {
+  .contact {
+    flex-direction: row;
+  }
+}
