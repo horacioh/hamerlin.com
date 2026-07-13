@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
-export const Seo = ({ description, lang, meta, keywords, title }) => (
+export const Seo = ({ description, lang, meta, keywords, title, jsonLd }) => (
   <StaticQuery
     query={graphql`
       query DefaultSEOQuery {
@@ -16,9 +16,7 @@ export const Seo = ({ description, lang, meta, keywords, title }) => (
       }
     `}
     render={data => {
-      const metaDescription = `${
-        data.site.siteMetadata.description
-      } ${description}`
+      const metaDescription = `${data.site.siteMetadata.description} ${description}`
       return (
         <Helmet
           htmlAttributes={{
@@ -69,6 +67,16 @@ export const Seo = ({ description, lang, meta, keywords, title }) => (
                 : []
             )
             .concat(meta)}
+          script={
+            jsonLd
+              ? [
+                  {
+                    type: `application/ld+json`,
+                    innerHTML: JSON.stringify(jsonLd),
+                  },
+                ]
+              : []
+          }
         />
       )
     }}
