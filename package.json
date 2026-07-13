@@ -1,19 +1,15 @@
 {
-  "name": "hamerlin",
-  "version": "0.1.0",
-  "description": "Hamerlin app + webapps",
-  "main": "index.js",
+  "name": "hamerlin.com",
+  "version": "1.0.0",
+  "description": "hamerlin.com — Fumigadora Hamerlin, S.A. static site (plain HTML + CSS)",
   "author": "Horacio Herrera <hi@horacioh.com> (@hhg2288)",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "site",
-    "app"
-  ],
   "scripts": {
-    "site": "yarn workspace site start",
-    "app": "yarn workspace app start",
-    "site:build": "yarn workspace site build",
-    "app:build": "yarn workspace app build"
+    "dev": "npx --yes serve .",
+    "start": "npm run dev"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
