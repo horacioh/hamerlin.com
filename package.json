@@ -15,5 +15,8 @@
     "app": "yarn workspace app start",
     "site:build": "yarn workspace site build",
     "app:build": "yarn workspace app build"
+  },
+  "resolutions": {
+    "sharp": "^0.27.2"
   }
 }
