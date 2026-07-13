@@ -11,7 +11,7 @@ const jsonLd = {
     "https://www.hamerlin.com/static/9b21fcca9af702f371e6781da3b5197d/c4f3a/hamerlin_hero.jpg",
   url: "https://www.hamerlin.com",
   telephone: "+507-221-5220",
-  email: "mailto:ventas@hamerlin.com",
+  email: "ventas@hamerlin.com",
   description:
     "Empresa panameña de control de plagas con más de 40 años de experiencia. Servicios de fumigación residencial y comercial, control de comején, roedores, insectos rastreros y voladores. Certificados MINSA.",
   address: {
