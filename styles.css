@@ -149,6 +149,17 @@ body {
   color: var(--color-lightgray);
 }
 
+.notfound h1 {
+  font-size: 72px;
+  margin: 0 0 8px;
+  color: var(--color-accent);
+}
+
+.notfound-lead {
+  font-size: 24px;
+  margin: 0;
+}
+
 /* tablet / desktop: lay contact boxes out in a row (theme breakpoint 52em) */
 @media (min-width: 52em) {
   .contact {
