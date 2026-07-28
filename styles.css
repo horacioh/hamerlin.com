@@ -117,6 +117,27 @@ body {
   transform-origin: center left;
 }
 
+.whatsapp-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease-in-out;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.08);
+}
+
 .notfound {
   min-height: 100vh;
   display: flex;
@@ -126,6 +147,17 @@ body {
   text-align: center;
   padding: 32px;
   color: var(--color-lightgray);
+}
+
+.notfound h1 {
+  font-size: 72px;
+  margin: 0 0 8px;
+  color: var(--color-accent);
+}
+
+.notfound-lead {
+  font-size: 24px;
+  margin: 0;
 }
 
 /* tablet / desktop: lay contact boxes out in a row (theme breakpoint 52em) */
